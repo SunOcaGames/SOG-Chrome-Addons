@@ -1,5 +1,5 @@
 from flask import Flask
-import firebase as fire
+import server.firebase as fire
 import time as t
 
 app = Flask('app')
@@ -21,5 +21,5 @@ def test():
   data = fire.dowmdate('Scratch_Online/SOG')
   return '上次驗證登入在' + format(t.time() - data['online_time'], '.2f') + '秒前'
 
-
-app.run(host='0.0.0.0', port=8080)
+def run():
+  app.run(host='0.0.0.0', port=8080)
