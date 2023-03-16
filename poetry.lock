@@ -185,6 +185,17 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "discordwebhook"
+version = "1.0.3"
+description = "discordwebhlok is a python library         for discord webhook with discord rest api on Python 3.6 and above."
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.dependencies]
+requests = "*"
+
+[[package]]
 name = "firebase-admin"
 version = "6.1.0"
 description = "Firebase Admin Python SDK"
@@ -908,7 +919,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "87ecebece66e17e9eff9c1ea4ac7e33a80fd1e4deca7763ed4e6d5731d7438ce"
+content-hash = "26bc6eaac6b377f634a03af376d2fc80a10921d9f6d5f53260adcbf05616e63f"
 
 [metadata.files]
 aiohttp = []
@@ -926,6 +937,7 @@ click = []
 colorama = []
 cryptography = []
 debugpy = []
+discordwebhook = []
 firebase-admin = []
 flask = []
 frozenlist = []

@@ -11,6 +11,7 @@ replit = "^3.2.4"
 Flask = "^2.2.0"
 urllib3 = "^1.26.12"
 firebase-admin = "^6.1.0"
+discordwebhook = "1.0.3"
 
 [tool.poetry.dev-dependencies]
 debugpy = "^1.6.2"
