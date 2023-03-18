@@ -2,16 +2,12 @@ from flask import Flask
 import server.discord_webhook as dc_wh
 import server.firebase as fire
 import time as t
-import datetime
+from server.log import AddLog
 
 app = Flask('app')
 
 
-def AddLog(text):
-  with open('server/日誌.txt', 'a') as flog:
-    nowtime = datetime.datetime.now(
-      tz=datetime.timezone(datetime.timedelta(hours=8)))
-    return flog.write(str(nowtime).split('+')[0] + '：寫入日誌：' + text + '\n')
+
 
 
 @app.route('/')
