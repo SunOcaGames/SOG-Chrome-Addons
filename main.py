@@ -70,8 +70,8 @@ def log():
 
 @app.route('/test/dcwebhook/<title>/<description>')
 def test_dcwebhook(title,description):
-  AddLog('test/dcwebhook/<title>/<description>被開啟了')
+  AddLog('test/dcwebhook被開啟了')
   AddLog('已使用discord webhook傳送{'+title+':'+description+'}')
   dc_wh.post(title,description)
-  return '已發送'
+  return '已使用discord webhook傳送{'+title+':'+description+'}'
 app.run(host='0.0.0.0', port=8080)
