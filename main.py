@@ -3,11 +3,10 @@ import server.discord_webhook as dc_wh
 import server.firebase as fire
 import time as t
 from server.log import AddLog
+from flask_cors import CORS
 
 app = Flask('app')
-
-
-
+CORS(app)
 
 
 @app.route('/')
@@ -40,10 +39,10 @@ def logut():
 def WhoIsOnline():
   AddLog('url-/WhoIsOnline被開啟了')
   data = fire.dowmdate('Scratch_Online/SOG')
+  del data['Discord_webhook']
   AddLog('已有人詢問有誰登入，已回復：上次驗證登入在' +
          format(t.time() - data['online_time'], '.2f') + '秒前')
-  return '上次驗證登入在' + format(t.time() - data['online_time'], '.2f') + '秒前'
-
+  return data
 
 @app.route('/addons')
 def addons():

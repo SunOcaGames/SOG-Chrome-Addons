@@ -19,4 +19,12 @@
         console.log(namespan[0].innerText)
       }
     }, 1000);
+    fetch('https://scratch-online.sunocagames-replit.repl.co/WhoIsOnline')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('發生錯誤:', error);
+  });
 })();
