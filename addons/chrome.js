@@ -10,21 +10,34 @@
 // ==/UserScript==
 
 (function() {
-    setInterval(() => {
-      if ('https://scratch.mit.edu/'==location.href) {
-        var namespan=document.getElementsByClassName('profile-name')
-        console.log(namespan[0].innerText)
-      } else if ('https://scratch.mit.edu/projects/'.indexOf(location.href)!=-1) {
-        namespan=document.getElementsByClassName('user-name')
-        console.log(namespan[0].innerText)
-      }
-    }, 1000);
-    fetch('https://scratch-online.sunocagames-replit.repl.co/WhoIsOnline')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('發生錯誤:', error);
-  });
+  url_ClassName={'https://scratch.mit.edu/':'profile-name'}
+
+
+  function getserver(url) {
+    return fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        return data;
+      })
+      .catch(error => {
+        console.error('發生錯誤:', error);
+      });
+  }
+
+  setInterval(() => {
+  if ('https://scratch.mit.edu/'==location.href) {
+      var namespan=document.getElementsByClassName('profile-name')
+      console.log(namespan[0].innerText)
+    } else if ('https://scratch.mit.edu/projects/'.indexOf(location.href)!=-1) {
+      namespan=document.getElementsByClassName('user-name')
+      console.log(namespan[0].innerText)
+    }
+  }, 1000);
+    
+    //getserver('https://scratch-online.sunocagames-replit.repl.co/WhoIsOnline').then(data => {
+    // 在這裡處理返回的數據
+    //  console.log(data);
+    //});
+    
 })();
