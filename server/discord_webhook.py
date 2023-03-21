@@ -4,6 +4,8 @@ import server.firebase as fire
 dcurl = fire.dowmdate('Scratch_Online/SOG')['Discord_webhook']
 discord = Discord(url=dcurl)
 
+def send_m(m):
+  discord.post(content=m)
 
 def post(title, description):
   discord.post(embeds=[{
