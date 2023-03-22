@@ -10,7 +10,7 @@
 // ==/UserScript==
 
 (function() {
-  url_ClassName={'https://scratch.mit.edu/':'profile-name'}
+  url_ClassName=[['https://scratch.mit.edu/projects/'],['https://scratch.mit.edu/','profile-name']]
   
 
   function getserver(url) {
@@ -29,7 +29,7 @@
   if ('https://scratch.mit.edu/'==location.href) {
       var namespan=document.getElementsByClassName('profile-name')
       console.log(namespan[0].innerText)
-    } else if ('https://scratch.mit.edu/projects/'.indexOf(location.href)!=-1) {
+    } else  {
       namespan=document.getElementsByClassName('user-name')
       console.log(namespan[0].innerText)
     }
