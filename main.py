@@ -16,7 +16,6 @@ def home():
 
 @app.route('/UpTimeRobot')
 def UpTimeRobot():
-  AddLog('url-/UpTimeRobot被開啟了')
   return 'Hello UpTimeRobot!'
 
 
